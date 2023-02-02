@@ -1,4 +1,4 @@
-# Getting-started-w-Kubernetes
+# Getting Started with Kubernetes
 My personal introduction to kubernetes
 
 

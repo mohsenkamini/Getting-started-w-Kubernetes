@@ -48,8 +48,9 @@ virt-install --name=manager1 \
 --disk size=50 \
 --os-variant=ubuntu20.04 \
 --network bridge=br0
+~~~
 
-
+~~~
 virt-install --name=worker01 \
 --vcpus=2 \
 --memory=2048 \
@@ -57,8 +58,9 @@ virt-install --name=worker01 \
 --disk size=50 \
 --os-variant=ubuntu20.04 \
 --network bridge=br0
+~~~
 
-
+~~~
 virt-install --name=worker02 \
 --vcpus=2 \
 --memory=2048 \
@@ -66,8 +68,9 @@ virt-install --name=worker02 \
 --disk size=50 \
 --os-variant=ubuntu20.04 \
 --network bridge=br0
+~~~
 
-
+~~~
 virt-install --name=worker03 \
 --vcpus=2 \
 --memory=2048 \

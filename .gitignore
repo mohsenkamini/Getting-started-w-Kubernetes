@@ -1,0 +1,3 @@
+*inventory
+ansible/inventory*
+ansible/.*inventory*

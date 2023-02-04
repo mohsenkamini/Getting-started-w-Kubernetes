@@ -1,0 +1,5 @@
+- name: push config.toml 
+  ansible.builtin.copy:
+      src: "{{ CONFIG_DIR_TASKS  }}containerd/config.toml"
+      dest: /etc/containerd/config.toml
+      backup: yes

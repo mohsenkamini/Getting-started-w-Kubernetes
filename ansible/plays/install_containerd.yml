@@ -1,6 +1,6 @@
 - hosts: all
-  vars:
-    foo: bar 
+  #  vars:
+  #    foo: bar 
       
   tasks:
     - name: apt update
@@ -29,3 +29,4 @@
     - name: install containerd using apt
       ansible.builtin.apt:
         name: containerd.io
+    

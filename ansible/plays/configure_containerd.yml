@@ -1,0 +1,11 @@
+- hosts: all
+  #  vars:
+  #    foo: bar 
+      
+  tasks:
+    - include: "{{ TASKS_DIR_PLAYS  }}containerd_conf.yml"
+
+    - name: systemctl restart containerd
+      ansible.builtin.systemd:
+        state: restarted
+        name: containerd

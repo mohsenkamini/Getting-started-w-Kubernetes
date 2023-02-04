@@ -1,0 +1,5 @@
+- name: push shecan resolv.conf 
+  ansible.builtin.copy:
+      src: "{{ CONFIG_DIR_TASKS  }}nameservers/shecan"
+      dest: /etc/resolv.conf
+      backup: yes

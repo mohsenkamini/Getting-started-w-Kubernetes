@@ -80,4 +80,24 @@ virt-install --name=worker03 \
 --network bridge=br0
 ~~~
 
+## Ansible
+### inventory
+~~~
+[masters]
+manager1 ansible_host=manager1.localkube
+
+[workers]
+worker01 ansible_host=worker01.localkube
+worker02 ansible_host=worker02.localkube
+worker03 ansible_host=worker03.localkube
+
+
+[all:vars]
+host_key_checking = false
+ansible_user=
+ansible_ssh_port=22
+# ansible_ssh_pass=
+ansible_become=yes
+ansible_ssh_private_key_file=
+~~~
 

@@ -20,11 +20,12 @@
       ansible.builtin.apt:
         update_cache: yes
 
-    - name: install kubectl using apt
+    - name: install kubelet using apt
       ansible.builtin.apt:
-        name: kubectl
-    
-    - name: pin kubectl's version
+        name: kubelet
+
+    - name: pin kubelet's version
       shell: |
-        apt-mark hold kubectl
+        apt-mark hold kubelet
+    
           #- include: "{{ TASKS_DIR_PLAYS }}set_default_nameservers.yml"

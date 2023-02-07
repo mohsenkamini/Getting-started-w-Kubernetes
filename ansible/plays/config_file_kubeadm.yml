@@ -1,0 +1,10 @@
+- hosts: all
+  #  vars:
+  #    foo: bar 
+      
+  tasks:
+    - name: push kubeadm-config.yaml 
+      ansible.builtin.copy:
+        src: "{{ CONFIG_DIR_PLAYS  }}kubeadm/kubeadm-config.yaml"
+        dest: /etc/kubernetes/kubeadm-config.yaml
+        backup: yes

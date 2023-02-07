@@ -101,3 +101,25 @@ ansible_become=yes
 ansible_ssh_private_key_file=
 ~~~
 
+run these:
+~~~
+cd ./ansible/plays/
+ansible-playbook -i ../inventory install_containerd.yml
+ansible-playbook -i ../inventory configure_containerd.yml
+ansible-playbook -i ../inventory disable_swap.yml
+~~~
+check macs and product_uuids:
+~~~
+cd ../../scripts/
+./check_macs.sh   
+./check_product_uuids.sh
+~~~
+run these: 
+~~~
+cd ../ansible/plays/
+ansible-playbook -i ../inventory install_kubectl.yml
+ansible-playbook -i ../inventory install_kubelet.yml
+ansible-playbook -i ../inventory install_kubeadm.yml
+ansible-playbook -i ../inventory config_file_kubeadm.yml
+~~~
+

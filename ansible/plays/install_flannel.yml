@@ -1,0 +1,16 @@
+- hosts: all
+  #  vars:
+  #    foo: bar 
+      
+  tasks:
+
+    - name: push kube-flannel.yml (you can change the subnet through {{ CONFIG_DIR_PLAYS  }}flannel/kube-flannel.yml)
+      ansible.builtin.copy:
+        src: "{{ CONFIG_DIR_PLAYS  }}flannel/kube-flannel.yml"
+        dest: /etc/kubernetes/kube-flannel.yml
+        backup: yes
+
+    - name: add flannel 
+      shell: |
+        kubectl apply -f /etc/kubernetes/kube-flannel.yml
+    

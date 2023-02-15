@@ -1,0 +1,21 @@
+- hosts: all
+  #  vars:
+  #    foo: bar 
+      
+  tasks:
+    - name: Add the br_netfilter module
+      community.general.modprobe:
+        name: br_netfilter
+        state: present
+
+    - name:
+      shell: 	grep -qxF "br_netfilter" /etc/modules || echo "br_netfilter" | tee -a /etc/modules
+
+    - name: push 99-kubernetes-cni.conf 
+      ansible.builtin.copy:
+        src: "{{ CONFIG_DIR_PLAYS  }}sysctl.d/99-kubernetes-cni.conf"
+        dest: /etc/sysctl.d/99-kubernetes-cni.conf
+        backup: yes
+
+    - name: sysctl -p
+      shell: sysctl -p 

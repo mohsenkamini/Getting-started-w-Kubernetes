@@ -8,4 +8,7 @@
 
     - name: initialize control-plane node
       shell: "kubeadm init --config {{ kubeadm_conf  }} " # --control-plane-endpoint {{ control_plane_endpoint }}  --pod-network-cidr {{ pod_network_cidr }}"
-    
+      register: kubeadm_init
+
+
+

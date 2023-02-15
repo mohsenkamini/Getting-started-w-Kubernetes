@@ -1,5 +1,13 @@
-- name: push default resolv.conf 
-  ansible.builtin.copy:
-      src: "{{ CONFIG_DIR_TASKS  }}nameservers/default"
-      dest: /etc/resolv.conf
-      backup: yes
+#- hosts: all
+#  #  vars:
+#  #    foo: bar 
+#      
+#
+#  tasks:
+#
+#
+  - name: push default resolv.conf 
+    ansible.builtin.copy:
+        src: "{{ CONFIG_DIR_TASKS  }}nameservers/default"
+        dest: /etc/resolv.conf
+        backup: yes

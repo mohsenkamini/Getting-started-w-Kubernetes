@@ -1,3 +1,9 @@
+#- hosts: all
+#  #  vars:
+#  #    foo: bar 
+#      
+#
+#  tasks:
 - name: push shecan resolv.conf 
   ansible.builtin.copy:
       src: "{{ CONFIG_DIR_TASKS  }}nameservers/shecan"

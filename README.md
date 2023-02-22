@@ -132,6 +132,7 @@ I'd rather to do this one manually to see the logs for now. doing these will ini
 ssh mohsen@172.16.0.10 -i /home/mohsen/.ssh/github-mohsen-local-laptop -t sudo -i
 kubeadm init --config /etc/kubernetes/kubeadm-config.yaml
 echo "KUBECONFIG=/etc/kubernetes/admin.conf" >> /etc/bash.bashrc
+echo "cp /etc/kubernetes/admin.conf /root/.kube/config" >> /etc/bash.bashrc
 ~~~
 you'll be prompted with the command to initiate the workers. **save** the `master_endpoint`, `token` and `discovery_token_ca_cert_hash` variables in the inventory file.
 

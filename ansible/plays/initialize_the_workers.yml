@@ -1,0 +1,9 @@
+- hosts: workers
+  tasks:
+
+    - name: initialize worker node
+      shell: "kubeadm join {{ master_endpoint  }} --token {{ token  }} --discovery-token-ca-cert-hash {{ discovery_token_ca_cert_hash }}"
+      register: kubeadm_join
+
+
+

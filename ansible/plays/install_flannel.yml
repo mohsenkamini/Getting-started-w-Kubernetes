@@ -1,4 +1,4 @@
-- hosts: masters
+- hosts: master1
   #  vars:
   #    foo: bar 
       
@@ -12,5 +12,5 @@
 
     - name: add flannel 
       shell: |
-        KUBECONFIG=/etc/kubernetes/admin.conf kubectl apply -f /etc/kubernetes/kube-flannel.yml
+        kubectl apply -f /etc/kubernetes/kube-flannel.yml
     

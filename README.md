@@ -117,6 +117,8 @@ cd ../../scripts/
 run these: 
 ~~~
 cd ../ansible/plays/
+# ansible-playbook -i ../inventory set_shecan.yml # if needed
+ansible-playbook -i ../inventory add_kube_apt.yml
 ansible-playbook -i ../inventory install_kubectl.yml
 ansible-playbook -i ../inventory install_kubelet.yml
 ansible-playbook -i ../inventory install_kubeadm.yml

@@ -125,7 +125,7 @@ ansible-playbook -i ../inventory add_kube_apt.yml
 ansible-playbook -i ../inventory install_kubectl.yml
 ansible-playbook -i ../inventory install_kubelet.yml
 ansible-playbook -i ../inventory install_kubeadm.yml
-ansible-playbook -i ../inventory config_file_kubeadm.yml
+# ansible-playbook -i ../inventory config_file_kubeadm.yml # optional if you have a kubeadm config
 ansible-playbook -i ../inventory enable_routing.yml
 ansible-playbook -i ../inventory config_file_sysctl_kubernetes_cni.yml
 ~~~
@@ -135,7 +135,8 @@ ansible-playbook -i ../inventory config_file_sysctl_kubernetes_cni.yml
 I'd rather to do this one manually to see the logs for now. doing these will initiate the control plane node on `172.16.0.10`.
 ~~~
 ssh mohsen@172.16.0.10 -i /home/mohsen/.ssh/github-mohsen-local-laptop -t sudo -i
-kubeadm init --config /etc/kubernetes/kubeadm-config.yaml
+kubeadm init  --apiserver-advertise-address=172.16.0.10  --pod-network-cidr=10.10.0.0/16 --kubernetes-version=1.25.9
+# or # kubeadm init --config /etc/kubernetes/kubeadm-config.yaml
 echo "KUBECONFIG=/etc/kubernetes/admin.conf" >> /etc/bash.bashrc
 echo "cp /etc/kubernetes/admin.conf /root/.kube/config" >> /etc/bash.bashrc
 ~~~

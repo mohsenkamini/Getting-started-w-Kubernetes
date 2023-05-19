@@ -13,13 +13,13 @@
 
           #- include: "{{ TASKS_DIR_PLAYS }}set_shecan.yml"
 
-    - name: add apt source for kubernetes
-      shell: curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-    - name: apt update
-      ansible.builtin.apt:
-        update_cache: yes
-
+          #    - name: add apt source for kubernetes
+          #      shell: curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+          #
+          #    - name: apt update
+          #      ansible.builtin.apt:
+          #        update_cache: yes
+          #
     - name: install kubelet using apt
       ansible.builtin.apt:
         name: kubelet

@@ -93,16 +93,19 @@ worker03 ansible_host=worker03.localkube
 
 
 [all:vars]
+K8S_VERSION_APT = 1.25.9-00
 host_key_checking = false
 ansible_user=
 ansible_ssh_port=22
 # ansible_ssh_pass=
 ansible_become=yes
 ansible_ssh_private_key_file=
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ~~~
 
 run these:
 ~~~
+apt list -a kubeadm
 cd ./ansible/plays/
 ansible-playbook -i ../inventory install_containerd.yml
 ansible-playbook -i ../inventory configure_containerd.yml

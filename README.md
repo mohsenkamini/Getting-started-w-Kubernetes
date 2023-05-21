@@ -33,6 +33,7 @@ iface br0 inet static
 
 - SNAT:
 ~~~
+iptables -t nat -A POSTROUTING --dst 172.16.0.0/24   -j ACCEPT
 iptables -t nat -A POSTROUTING --src 172.16.0.0/24 -j MASQUERADE
 iptables-save > /etc/iptables/rules.v4
 systemctl enable netfilter-persistent.service

@@ -17,4 +17,9 @@
     - name: pin kubectl's version
       shell: |
         apt-mark hold kubectl
+
           #- include: "{{ TASKS_DIR_PLAYS }}set_default_nameservers.yml"
+    
+    - name: enable bash completion for kubectl
+      shell: |
+        kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null

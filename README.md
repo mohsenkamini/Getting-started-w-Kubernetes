@@ -102,6 +102,12 @@ ansible_ssh_port=22
 ansible_become=yes
 ansible_ssh_private_key_file=
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+CONFIG_DIR_TASKS=../../configs/
+CONFIG_DIR_PLAYS=../configs/
+TASKS_DIR_PLAYS=./tasks/
+master_endpoint=192.168.20.17:6443
+# token=
+# discovery_token_ca_cert_hash=
 ~~~
 
 run these:

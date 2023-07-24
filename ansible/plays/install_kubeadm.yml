@@ -17,4 +17,8 @@
       shell: |
         apt-mark hold kubeadm
     
+    - name: enable bash completion for kubeadm
+      shell: |
+        kubeadm completion bash | tee /etc/bash_completion.d/kubeadm > /dev/null
+
           #- include: "{{ TASKS_DIR_PLAYS }}set_default_nameservers.yml"

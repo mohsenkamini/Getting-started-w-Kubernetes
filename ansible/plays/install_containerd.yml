@@ -30,3 +30,5 @@
       ansible.builtin.apt:
         name: containerd.io
     
+    - name: check containerd installation
+      shell: containerd -v 

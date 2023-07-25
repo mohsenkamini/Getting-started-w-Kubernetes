@@ -150,10 +150,12 @@ echo "cp /etc/kubernetes/admin.conf /root/.kube/config" >> /etc/bash.bashrc
 you'll be prompted with the command to initiate the workers. **save** the `master_endpoint`, `token` and `discovery_token_ca_cert_hash` variables in the inventory file.
 
 before initiating the workers you need to deploy a pod network to the cluster:
-### install flannel network pod plugin
+### install flannel/calico network pod plugin
 ~~~
 ansible-playbook -i ../inventory install_flannel.yml
 ~~~
+or read the file `ansible/plays/install_calico.yml` to get an understanding of how to install calico.
+> customize the calico config before `kubectl create -f ` on it.
 
 ### initiate workers
 run:

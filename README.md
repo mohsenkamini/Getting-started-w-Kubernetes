@@ -149,6 +149,11 @@ echo "cp /etc/kubernetes/admin.conf /root/.kube/config" >> /etc/bash.bashrc
 ~~~
 you'll be prompted with the command to initiate the workers. **save** the `master_endpoint`, `token` and `discovery_token_ca_cert_hash` variables in the inventory file.
 
+print join command:
+~~~
+kubeadm token create --print-join-command
+~~~
+
 before initiating the workers you need to deploy a pod network to the cluster:
 ### install flannel/calico network pod plugin
 ~~~

@@ -1,7 +1,7 @@
 # Getting Started with Kubernetes
 My personal introduction to kubernetes
 
-> Notice: since the apt repo for kubernetes is changed to community-maintained one,and the previous one is deprecated, this repo lonoger works fully and is not updated to support that. although the only change needed is the apt repo fix. 
+> Notice: since the apt repo for kubernetes is changed to a community-maintained one(13 Sep, 2023),and the previous one is deprecated, this repo lonoger works fully and is not updated to support that. although the only change needed is the apt repo fix. 
 
 ## Nodes 
 

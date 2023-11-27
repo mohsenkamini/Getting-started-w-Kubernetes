@@ -4,6 +4,9 @@
       
   tasks:
 
-    - name: set shecan dns
-      shell: echo "nameserver 9.9.9.9" > /etc/resolv.conf ; echo "nameserver   1.1.1.1" >> /etc/resolv.conf
+    - name: set custom dns
+      shell: | 
+        chattr -i /etc/resolv.conf | rm /etc/resolv.conf
+        echo "nameserver 192.168.56.20" > /etc/resolv.conf ; echo "nameserver   9.9.9.9" >> /etc/resolv.conf
+        chattr +i /etc/resolv.conf
 

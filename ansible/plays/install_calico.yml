@@ -12,9 +12,12 @@
 
     - name: install calico tigera operator 
       shell: |
-        kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+        #kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+        kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
         # we need to wait on this untill the pod gets running before running the next command
     - name: install calico  
       shell: |
-        kubectl create -f /etc/kubernetes/custom-resources.yaml
+        #kubectl create -f /etc/kubernetes/custom-resources.yaml
+        wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml
+        kubectl create -f custom-resources.yaml
     

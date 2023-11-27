@@ -118,7 +118,7 @@ ansible-playbook -i ../inventory install_containerd.yml
 ansible-playbook -i ../inventory configure_containerd.yml
 ansible-playbook -i ../inventory disable_swap.yml
 ~~~
-check macs and product_uuids:
+check macs and product_uuids: (OPTIONAL only if you are using virtual machines)
 ~~~
 cd ../../scripts/
 ./check_macs.sh   

@@ -1,8 +1,6 @@
 # Getting Started with Kubernetes
 My personal introduction to kubernetes
 
-> Notice: since the apt repo for kubernetes is changed to a community-maintained one(13 Sep, 2023),and the previous one is deprecated, this repo lonoger works fully and is not updated to support that. although the only change needed is the apt repo fix. 
-
 ## Nodes 
 
 | Hostname | IP address |
@@ -94,7 +92,8 @@ worker03 ansible_host=worker03.localkube
 
 
 [all:vars]
-K8S_VERSION_APT = 1.25.9-00
+K8S_VERSION_APT = 1.25.9-1.1
+K8S_VERSION_APT_repo = v1.25
 host_key_checking = false
 ansible_user=
 ansible_ssh_port=22
